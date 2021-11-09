@@ -29,6 +29,16 @@ function createEventListenerOnCol(functionName, num) {
     }
 }
 
+function clearEtch() {
+    console.log("clear")
+    Array.from(document.getElementsByClassName("col-squares")).forEach(col => {
+        Array.from(col.classList).forEach(colClass => {
+            col.style.backgroundColor = "#f7f6ea";
+        })
+
+    })
+}
+
 function mouseOverNormal() {
     this.style.backgroundColor = "#C7866A"
 }
@@ -45,7 +55,7 @@ function mouseOverGradient() {
 }
 
 var buttonClear = document.getElementById("clear");
-buttonClear.addEventListener("click", function(){});
+buttonClear.addEventListener("click", clearEtch);
 
 var buttonErase = document.getElementById("erase");
 buttonErase.addEventListener("click", function () {
