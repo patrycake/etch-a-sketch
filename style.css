@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Varela+Round&display=swap');
+
 html,
 body {
     width: 100%;
@@ -8,7 +10,34 @@ body {
     text-align: center;
 }
 
+h1 {
+    color: #C7866A;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #f7f6ea;
+    color: #C7866A;
+    border-radius: 8px;
+    margin: 10px 20px;
+    border: 2px solid #C7866A;
+}
+
+button:hover {
+    background-color: #C7866A;
+    color: #f7f6ea;
+}
+
+#menu {
+
+    border: 2px solid #C7866A;
+    border-radius: 8px;
+    /* box-shadow: 0px 0px 40px 10px rgb(0, 0, 0, 0.15); */
+     margin: 30px 200px; 
+}
+
 #etch-board{
+    margin: 20px auto;
     border-radius: 8px;
     box-shadow: 0px 0px 40px 10px rgb(0, 0, 0, 0.15);
     display: flex;
@@ -26,4 +55,20 @@ body {
 .col-squares {
     flex: 1 1 auto;
     width: 5px;
+}
+
+.square-round-top-left {
+    border-radius: 8px 0 0 0;
+}
+
+.square-round-top-right {
+    border-radius: 0 8px 0 0;
+}
+
+.square-round-bottom-left {
+    border-radius: 0 0 0 8px;
+}
+
+.square-round-bottom-right {
+    border-radius: 0 0 8px 0;
 }
