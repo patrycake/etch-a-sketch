@@ -4,7 +4,7 @@ body {
     height: 100%;
     font-family: 'Montserrat', sans-serif;
     font-family: 'Varela Round', sans-serif;
-    background-color: #E9E4E1;
+    background-color: #f7f6ea;
     text-align: center;
 }
 
@@ -15,7 +15,7 @@ body {
     flex-direction: column;
     width: 500px;
     height: 500px;
-    background-color: #E9E4E1;
+    background-color: #f7f6ea;
 }
 
 .rows {
