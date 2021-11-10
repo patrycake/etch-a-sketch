@@ -1,8 +1,11 @@
 /* Global Variables */
 var colorNum = 0;
+var slider = document.getElementById("myRange");
+var num = slider.value;
 
 function createEtchBoard(num) {
     var etchBoardDom = document.getElementById("etch-board");
+    etchBoardDom.innerHTML = "";
     for (let row = 0; row < num; row++) {
         let divRow = document.createElement("div");
         divRow.id = `row${row}`;
@@ -15,9 +18,15 @@ function createEtchBoard(num) {
         }
         etchBoardDom.appendChild(divRow);
     }
+    createEventListenerOnCol(mouseOverNormal, num);
+    document.getElementById(`row${0}col${0}`).classList.add("square-round-top-left");
+    document.getElementById(`row${0}col${num-1}`).classList.add("square-round-top-right");
+    document.getElementById(`row${num-1}col${0}`).classList.add("square-round-bottom-left");
+    document.getElementById(`row${num-1}col${num-1}`).classList.add("square-round-bottom-right");
 }
 
 function createEventListenerOnCol(functionName, num) {
+    console.log("list: " + num)
     for (let row = 0; row < num; row++) {
         for (let col = 0; col < num; col++) {
             let divCol = document.getElementById(`row${row}col${col}`);
@@ -27,6 +36,12 @@ function createEventListenerOnCol(functionName, num) {
             divCol.addEventListener("mouseover", functionName);
         }
     }
+}
+
+slider.oninput = function () {
+    clearEtch();
+    console.log("slider" + this.value)
+    createEtchBoard(this.value);
 }
 
 function clearEtch() {
@@ -59,18 +74,18 @@ buttonClear.addEventListener("click", clearEtch);
 
 var buttonErase = document.getElementById("erase");
 buttonErase.addEventListener("click", function () {
-    createEventListenerOnCol(mouseOverErase, 16)
+    createEventListenerOnCol(mouseOverErase, slider.value)
 });
 
 var buttonNormal = document.getElementById("normal");
 buttonNormal.addEventListener("click", function () {
-    createEventListenerOnCol(mouseOverNormal, 16)
+    createEventListenerOnCol(mouseOverNormal, slider.value)
 });
 
 var buttonGradient = document.getElementById("gradient");
 buttonGradient.addEventListener("click", function () {
-    createEventListenerOnCol(mouseOverGradient, 16)
+    console.log("GBut: " + slider.value)
+    createEventListenerOnCol(mouseOverGradient, slider.value)
 });
 
-createEtchBoard(16);
-createEventListenerOnCol(mouseOverNormal, 16);
+createEtchBoard(num);

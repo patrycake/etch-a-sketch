@@ -72,3 +72,21 @@ button:hover {
 .square-round-bottom-right {
     border-radius: 0 0 8px 0;
 }
+
+.slider {
+    -webkit-appearance: none;
+    background: #C7866A;
+    height: 10px;
+    border-radius: 8px;
+    margin: 20px;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%; 
+    background: #402D25;
+    cursor: pointer;
+  }
